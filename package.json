@@ -3,7 +3,7 @@
   "description": "React middleware for Reclare on top of the new Context API",
   "author": "Oguz Gelal <o.gelal77@gmail.com> (https://oguzgelal.com/)",
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/react-reclare.min.js",
   "dependencies": {},
   "devDependencies": {
@@ -48,19 +48,21 @@
   "scripts": {
     "precommit": "lint-staged",
     "rand": "openssl rand -base64 16 | cut -c 1-14 | tr -d '\n' | pbcopy",
-    "build:commonjs":
-      "cross-env BABEL_ENV=commonjs babel src --out-dir dist/cjs",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir dist/cjs",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir dist/es",
     "build:umd": "cross-env BABEL_ENV=rollup NODE_ENV=development rollup -c",
     "build:umd:min": "cross-env BABEL_ENV=rollup NODE_ENV=production rollup -c",
-    "build":
-      "npm run clean && npm run build:commonjs && npm run build:es && npm run build:umd && npm run build:umd:min && rimraf dist/es dist/cjs",
-    "prettier":
-      "./node_modules/.bin/prettier --config .prettierrc --write src/**/*.js",
+    "build": "npm run clean && npm run build:commonjs && npm run build:es && npm run build:umd && npm run build:umd:min && rimraf dist/es dist/cjs",
+    "prettier": "./node_modules/.bin/prettier --config .prettierrc --write src/**/*.js",
     "clean": "rimraf dist"
   },
   "lint-staged": {
-    "*.{js,json,css,md}": ["npm run prettier", "git add"]
+    "*.{js,json,css,md}": [
+      "npm run prettier",
+      "git add"
+    ]
   },
-  "files": ["dist"]
+  "files": [
+    "dist"
+  ]
 }
