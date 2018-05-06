@@ -1,10 +1,10 @@
 {
   "name": "react-reclare",
-  "description": "React middleware for Reclare on top of the new Context Api",
+  "description": "React middleware for Reclare on top of the new Context API",
   "author": "Oguz Gelal <o.gelal77@gmail.com> (https://oguzgelal.com/)",
   "license": "MIT",
-  "version": "0.0.1",
-  "main": "dist/reclare.js",
+  "version": "0.0.2",
+  "main": "dist/react-reclare.min.js",
   "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.26.0",
