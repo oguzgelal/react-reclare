@@ -1,4 +1,4 @@
-import Reclare from './provider/providerFactory';
+import ReclareProvider from './provider/providerFactory';
 import connect from './connect/connectFactory';
 
-export { Reclare, connect };
+export { ReclareProvider, connect };

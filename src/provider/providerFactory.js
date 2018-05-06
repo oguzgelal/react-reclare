@@ -5,7 +5,7 @@ import initialize from '../initialize';
 
 let provider = null;
 
-class Reclare extends React.Component {
+class ReclareProvider extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -29,10 +29,10 @@ class Reclare extends React.Component {
   }
 }
 
-Reclare.propTypes = {
+ReclareProvider.propTypes = {
   declarations: PropTypes.array,
   initialState: PropTypes.object
 };
 
 export { provider };
-export default Reclare;
+export default ReclareProvider;
