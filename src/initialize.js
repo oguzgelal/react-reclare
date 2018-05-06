@@ -1,4 +1,6 @@
-import { startReclare, registerMiddleware } from 'reclare';
+// TODO: find a better solution to this
+// import { startReclare, registerMiddleware } from 'reclare';
+import { startReclare, registerMiddleware } from '../../reclare/src';
 
 import getStateHooks from './hooks/getState';
 import setStateHooks from './hooks/setState';

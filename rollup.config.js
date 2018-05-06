@@ -8,7 +8,7 @@ const env = process.env.NODE_ENV;
 const ext = env === 'production' ? 'min.js' : 'js';
 
 const config = {
-  external: ['react', 'reclare'],
+  external: ['react', 'reclare', 'prop-types'],
   input: 'src/index.js',
   output: {
     name: 'React Reclare',
@@ -17,6 +17,7 @@ const config = {
     globals: {
       react: 'React',
       reclare: 'Reclare',
+      propTypes: 'PropTypes'
     },
   },
   plugins: [
