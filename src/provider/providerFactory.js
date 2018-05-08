@@ -16,10 +16,10 @@ class ReclareProvider extends React.Component {
   }
 
   componentWillMount() {
-    const { declarations, initialState } = this.props;
+    const { declarations, initialState = {}, options } = this.props;
 
     // initialize the reclare & react-reclare
-    initialize({ provider, declarations, initialState });
+    initialize({ provider, declarations, initialState, options });
 
     // set the for the first load
     this.setState({ value: initialState });
@@ -32,7 +32,8 @@ class ReclareProvider extends React.Component {
 
 ReclareProvider.propTypes = {
   declarations: PropTypes.array,
-  initialState: PropTypes.object
+  initialState: PropTypes.object,
+  options: PropTypes.object,
 };
 
 export { provider };

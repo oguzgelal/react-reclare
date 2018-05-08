@@ -5,12 +5,23 @@ import { startReclare, registerMiddleware } from '../../reclare/src';
 import getStateHooks from './hooks/getState';
 import setStateHooks from './hooks/setState';
 
-export default ({ provider, declarations, initialState }) => {
+export default ({
+  provider,
+  declarations,
+  initialState,
+  options = {},
+}) => {
+
   // register hooks
   registerMiddleware({
     onGetState: getStateHooks(provider),
     onAfterSetState: setStateHooks(provider)
   });
+
   // initialize reclare context
-  startReclare({ declarations, initialState });
+  startReclare({
+    declarations,
+    initialState,
+    options,
+  });
 };
