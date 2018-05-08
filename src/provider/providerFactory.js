@@ -16,7 +16,7 @@ class ReclareProvider extends React.Component {
   }
 
   componentWillMount() {
-    const { declarations, initialState = {}, options } = this.props;
+    const { declarations, initialState = {}, options = {} } = this.props;
 
     // initialize the reclare & react-reclare
     initialize({ provider, declarations, initialState, options });
