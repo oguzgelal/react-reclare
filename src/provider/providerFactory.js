@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Provider } from '../context';
-import initialize from '../initialize';
 
 let provider = null;
 
@@ -12,17 +11,23 @@ class ReclareProvider extends React.Component {
 
     provider = this;
 
-    this.state = {};
+    this.state = {
+      value: {},
+    };
   }
 
   componentWillMount() {
-    const { declarations, initialState = {}, options = {} } = this.props;
 
-    // initialize the reclare & react-reclare
-    initialize({ provider, declarations, initialState, options });
+    const context = this.props.context;
 
-    // set the for the first load
-    this.setState({ value: initialState });
+    this.setState({
+      value: { ...context.state }
+    })
+
+    context.subscribe([{
+      situation: ({ hasChange }) => hasChange(),
+      reaction: ({ state }) => this.setState({ value: { ...state } })
+    }])
   }
 
   render() {
@@ -31,9 +36,8 @@ class ReclareProvider extends React.Component {
 }
 
 ReclareProvider.propTypes = {
-  declarations: PropTypes.array,
-  initialState: PropTypes.object,
-  options: PropTypes.object,
+  children: PropTypes.any,
+  context: PropTypes.object,
 };
 
 export { provider };

@@ -8,7 +8,7 @@ const env = process.env.NODE_ENV;
 const ext = env === 'production' ? 'min.js' : 'js';
 
 const config = {
-  external: ['react', 'reclare', 'prop-types'],
+  external: ['react', 'prop-types'],
   input: 'src/index.js',
   output: {
     name: 'React Reclare',
@@ -16,7 +16,6 @@ const config = {
     format: 'umd',
     globals: {
       react: 'React',
-      reclare: 'Reclare',
       propTypes: 'PropTypes'
     },
   },
