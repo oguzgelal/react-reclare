@@ -3,7 +3,7 @@
   "description": "React middleware for Reclare on top of the new Context API",
   "author": "Oguz Gelal <o.gelal77@gmail.com> (https://oguzgelal.com/)",
   "license": "MIT",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "dist/react-reclare.min.js",
   "dependencies": {
     "pre-commit": "^1.2.2"
