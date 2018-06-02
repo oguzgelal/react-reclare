@@ -12,22 +12,23 @@ class ReclareProvider extends React.Component {
     provider = this;
 
     this.state = {
-      value: {},
+      value: {}
     };
   }
 
   componentWillMount() {
-
     const context = this.props.context;
 
     this.setState({
       value: { ...context.state }
-    })
+    });
 
-    context.subscribe([{
-      situation: ({ hasChange }) => hasChange(),
-      reaction: ({ state }) => this.setState({ value: { ...state } })
-    }])
+    context.subscribe([
+      {
+        situation: ({ hasChange }) => hasChange(),
+        reaction: ({ state }) => this.setState({ value: { ...state } })
+      }
+    ]);
   }
 
   render() {
@@ -37,7 +38,7 @@ class ReclareProvider extends React.Component {
 
 ReclareProvider.propTypes = {
   children: PropTypes.any,
-  context: PropTypes.object,
+  context: PropTypes.object
 };
 
 export { provider };
