@@ -11,7 +11,7 @@ const config = {
   external: ['react', 'prop-types'],
   input: 'src/index.js',
   output: {
-    name: 'React Reclare',
+    name: 'ReactReclare',
     file: `dist/react-reclare.${ext}`,
     format: 'umd',
     globals: {
