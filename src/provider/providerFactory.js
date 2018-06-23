@@ -1,6 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
 import { Provider } from '../context';
 
 let provider = null;
@@ -35,11 +33,6 @@ class ReclareProvider extends React.Component {
     return <Provider value={this.state.value}>{this.props.children}</Provider>;
   }
 }
-
-ReclareProvider.propTypes = {
-  children: PropTypes.any,
-  context: PropTypes.object
-};
 
 export { provider };
 export default ReclareProvider;

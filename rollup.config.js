@@ -8,23 +8,22 @@ const env = process.env.NODE_ENV;
 const ext = env === 'production' ? 'min.js' : 'js';
 
 const config = {
-  external: ['react', 'prop-types'],
+  external: ['react'],
   input: 'src/index.js',
   output: {
     name: 'ReactReclare',
     file: `dist/react-reclare.${ext}`,
     format: 'umd',
     globals: {
-      react: 'React',
-      propTypes: 'PropTypes'
-    },
+      react: 'React'
+    }
   },
   plugins: [
     nodeResolve(),
     babel({ exclude: '**/node_modules/**' }),
     replace({ 'process.env.NODE_ENV': JSON.stringify(env) }),
     commonjs()
-  ],
+  ]
 };
 
 if (env === 'production') {
